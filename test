@@ -1,0 +1,62 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Students {
+   static Scanner scanner = new Scanner(System.in);
+   static int[] array = new int[4];
+  static   int arrayLength = array.length;
+    public static void main(String[] args) {
+        for(int i= 0 ; i < array.length; i++){
+            System.out.println("Enter students scores : ");
+            array[i] = scanner.nextInt();
+
+
+        }
+
+        System.out.println(averageNumber(array));
+        System.out.println();
+
+        /*Arrays.sort(array);
+
+        System.out.println(Arrays.toString(array));*/
+        getSortedArray(array);
+        System.out.println(maximumNumber(array));
+        System.out.println( minimumValue(array));
+
+       // int[] arrayCopy = Arrays.copyOf(array,arrayLength);
+
+
+
+     /*   //arrayCopy = Arrays.toString(array);
+        System.out.println(Arrays.toString(arrayCopy));
+        System.out.println();
+
+      //  System.out.println(maximumNumber(arrayCopy));*/
+
+    }
+
+    public static double  averageNumber(int[] array){
+        int total = 0;
+        for(int i =0; i<array.length; i++){
+            total +=array[i];
+        }
+        return (double) total / (double) array.length;
+    }
+    public  static int maximumNumber(int[] array){
+        int lastIndex = array.length-1;
+        System.out.println("Maximum value");
+        return  array[lastIndex] ;
+    }
+    public static void getSortedArray(int[] array){
+        Arrays.sort(array);
+        System.out.println("Sorted array: "+Arrays.toString(array));
+    }
+    public static int minimumValue(int[] array){
+        int firstIndex = 0;
+        System.out.println("Minimum value");
+        return array[firstIndex];
+    }
+}
+
+
